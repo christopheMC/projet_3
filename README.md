@@ -72,6 +72,10 @@ On peut également faire les 3 opérations précédentes en lançant la commande
 
 ## API pour interrogation de la base de données
 L'**API** a été créée sous **Flask**.
+Pour la lancer, il faut taper la commande suivante:
+
+**python3 api_projet_3.py**
+
 L'URL, pour se connecter, est le suivant:
 
 **http://0.0.0.0:5000/**
@@ -82,16 +86,16 @@ L'API possède plusieurs routes différentes que je vais détailler ci-dessous:
 Pour les routes suivantes, il est important de connaitre le nom des différentes colonnes du jeu de données.
 Nous avons les noms suivants:
 
-**Name**: Nom du joueur
-**Position**: Position sur le terrain (ex: Centre Forward, Attacking Midfield, Second Striker....)
-**Age**: Age du joueur
-**Team_from**: Nom de l'équipe avant le transfert
-**League_from**: Nom du championnat avant le transfert
-**Team_to**: Nom de l'équipe après le transfert
-**League_to**: Nom du championnat après le transfert
-**Season**: Date de la saison (ex: 2001 2002)
-**Market_value**: Prix estimatif du transfert
-**Transfer_fee**: Prix réel du transfert
+-**Name**: Nom du joueur
+-**Position**: Position sur le terrain (ex: Centre Forward, Attacking Midfield, Second Striker....)
+-**Age**: Age du joueur
+-**Team_from**: Nom de l'équipe avant le transfert
+-**League_from**: Nom du championnat avant le transfert
+-**Team_to**: Nom de l'équipe après le transfert
+-**League_to**: Nom du championnat après le transfert
+-**Season**: Date de la saison (ex: 2001 2002)
+-**Market_value**: Prix estimatif du transfert
+-**Transfer_fee**: Prix réel du transfert
 
 - **http://0.0.0.0:5000/projet_3/match/field/query** pour faire une recherche spécifique, on remplacera le champs "field" par un des noms de colonnes précédemment cité et le champs "query" par le nom ou la valeur que vous recherchez.
 
