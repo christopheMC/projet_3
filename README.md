@@ -32,7 +32,8 @@ Dans une fenêtre internet, vous aurez accès à l'interface Kibana à l'adresse
 
 **http://localhost:5601**
 
-## Préparation de l'index dans ES
+## Création de l'index dans ES et peuplement de façon manuelle
+### Création du pipeline
 On crée le pipeline avec le nom des colonnes issues du jeu de données.
 
 **curl -X PUT localhost:9200/_ingest/pipeline/projet_3_pipeline -H "Content-Type: application/json" -d '{
@@ -53,15 +54,21 @@ Puis on crée l'index "projet_3" avec la ligne de commande suivante:
 -H "Content-Type: application/json" \
 --data-binary "@projet_3_analyzer.json"**
 
-## Nettoyage du jeu de données
-Pour nettoyer le jeu de données, j'ai créé un notebook qui va créer un nouveau fichier .csv où on aura supprimé les headers et supprimé les caractères de ponctuation tels que les virgules, les guillemets....
-Le notebook se nomme: **Projet_3.ipynb**
+### Nettoyage du jeu de données
+Pour nettoyer le jeu de données, il suffit de lancer un programme python qui va créer un nouveau fichier .csv où on aura supprimé les headers et supprimé les caractères de ponctuation tels que les virgules, les guillemets....
 
-## Peuplement de la base de données
+**python3 transform.py**
+
+### Peuplement de la base de données
 J'ai crée un script pour transférer le fichier csv nettoyé vers la base de données.
 Il suffit de taper la commande suivante dans le terminal:
 
 **./insert.sh**
+
+## Création de l'index dans ES et peuplement de façon automatique
+On peut également faire les 3 opérations précédentes en lançant la commande suivante:
+
+**python3 fill.py**
 
 ## API pour interrogation de la base de données
 L'**API** a été créée sous **Flask**.
