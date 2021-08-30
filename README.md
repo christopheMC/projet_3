@@ -82,16 +82,16 @@ L'API possède plusieurs routes différentes que je vais détailler ci-dessous:
 Pour les routes suivantes, il est important de connaitre le nom des différentes colonnes du jeu de données.
 Nous avons les noms suivants:
 
-**name**: Nom du joueur
-**position**: Position sur le terrain (ex: Centre Forward, Attacking Midfield, Second Striker....)
-**age**: Age du joueur
-**team_from**: Nom de l'équipe avant le transfert
-**league_from**: Nom du championnat avant le transfert
-**team_to**: Nom de l'équipe après le transfert
-**league_to**: Nom du championnat après le transfert
-**season**: Date de la saison (ex: 2001 2002)
-**market_value**: Prix estimatif du transfert
-**transfer_fee**: Prix réel du transfert
+**Name**: Nom du joueur
+**Position**: Position sur le terrain (ex: Centre Forward, Attacking Midfield, Second Striker....)
+**Age**: Age du joueur
+**Team_from**: Nom de l'équipe avant le transfert
+**League_from**: Nom du championnat avant le transfert
+**Team_to**: Nom de l'équipe après le transfert
+**League_to**: Nom du championnat après le transfert
+**Season**: Date de la saison (ex: 2001 2002)
+**Market_value**: Prix estimatif du transfert
+**Transfer_fee**: Prix réel du transfert
 
 - **http://0.0.0.0:5000/projet_3/match/field/query** pour faire une recherche spécifique, on remplacera le champs "field" par un des noms de colonnes précédemment cité et le champs "query" par le nom ou la valeur que vous recherchez.
 
