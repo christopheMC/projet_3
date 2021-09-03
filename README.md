@@ -41,8 +41,8 @@ On crée le pipeline avec le nom des colonnes issues du jeu de données.
     {
       "csv" : {
       "field" :"csv_line",
-      "target_fields":["name","position","age","team_from","league_from","team_to","league_to",
-      "season","market_value","transfer_fee"]
+      "target_fields":["Name","Position","Age","Team_from","League_from","Team_to","League_to",
+      "Season","Market_value","Transfer_fee"]
       }
     }
   ]
@@ -81,7 +81,7 @@ L'URL, pour se connecter, est le suivant:
 **http://0.0.0.0:5000/**
 
 L'API possède plusieurs routes différentes que je vais détailler ci-dessous:
-- **http://0.0.0.0:5000/projet_3/all** pour avoir une visualisation d'une dizaine de résultats.
+- **http://0.0.0.0:5000/all_transfers** pour avoir une visualisation d'une dizaine de résultats.
 
 Pour les routes suivantes, il est important de connaitre le nom des différentes colonnes du jeu de données.
 Nous avons les noms suivants:
@@ -97,22 +97,26 @@ Nous avons les noms suivants:
 - **Market_value**: Prix estimatif du transfert
 - **Transfer_fee**: Prix réel du transfert
 
-- **http://0.0.0.0:5000/projet_3/match/field/query** pour faire une recherche spécifique, on remplacera le champs "field" par un des noms de colonnes précédemment cité et le champs "query" par le nom ou la valeur que vous recherchez.
+- **http://0.0.0.0:5000/match/field/query** pour faire une recherche spécifique, on remplacera le champs "field" par un des noms de colonnes précédemment cité et le champs "query" par le nom ou la valeur que vous recherchez (ex: http://0.0.0.0:5000/match/Name/Zidane).
 
-- **http://0.0.0.0:5000/projet_3/range/field/less/query** pour obtenir tous les résultats qui seront inférieurs à la valeur demandée, on remplacera le champs "field" par un des noms de colonnes numériques (age, season, market_value, transfer_fee) et le champs "query" par la valeur souhaitée.
+- **http://0.0.0.0:5000/range/field/less/query** pour obtenir tous les résultats qui seront inférieurs à la valeur demandée, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee) et le champs "query" par la valeur souhaitée.
 
-- **http://0.0.0.0:5000/projet_3/range/field/more/query** pour obtenir tous les résultats qui seront supérieurs à la valeur demandée, on remplacera le champs "field" par un des noms de colonnes numériques (age, season, market_value, transfer_fee) et le champs "query" par la valeur souhaitée.
+- **http://0.0.0.0:5000/range/field/more/query** pour obtenir tous les résultats qui seront supérieurs à la valeur demandée, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee) et le champs "query" par la valeur souhaitée.
 
-- **http://0.0.0.0:5000/projet_3/range/field/in/query1/query2** pour obtenir tous les résultats qui seront comppris entre les valeur demandées, on remplacera le champs "field" par un des noms de colonnes numériques (age, season, market_value, transfer_fee), le champs "query1" et le champs "query" par les valeurs souhaitées.
+- **http://0.0.0.0:5000/range/field/in/query1/query2** pour obtenir tous les résultats qui seront comppris entre les valeur demandées, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee), le champs "query1" et le champs "query" par les valeurs souhaitées.
 
-- **http://0.0.0.0:5000/projet_3/range/field/out/query1/query2** pour obtenir tous les résultats qui seront comppris en dehors des valeur demandées, on remplacera le champs "field" par un des noms de colonnes numériques (age, season, market_value, transfer_fee), le champs "query1" et le champs "query" par les valeurs souhaitées.
+- **http://0.0.0.0:5000/range/field/out/query1/query2** pour obtenir tous les résultats qui seront comppris en dehors des valeur demandées, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee), le champs "query1" et le champs "query" par les valeurs souhaitées.
 
-- **http://0.0.0.0:5000/projet_3/avg/field** pour obtenir la moyenne du champs "field" (age, market_value, transfer_fee) demandé.
+- **http://0.0.0.0:5000/avg/field** pour obtenir la moyenne du champs "field" (Age, Market_value, Transfer_fee) demandé.
 
-- **http://0.0.0.0:5000/projet_3/min/field** pour obtenir le minimum du champs "field" (age, market_value, transfer_fee) demandé.
+- **http://0.0.0.0:5000/min/field** pour obtenir le minimum du champs "field" (Age, Market_value, Transfer_fee) demandé.
 
-- **http://0.0.0.0:5000/projet_3/min/field** pour obtenir le maximum du champs "field" (age, market_value, transfer_fee) demandé.
+- **http://0.0.0.0:5000/min/field** pour obtenir le maximum du champs "field" (Age, Market_value, Transfer_fee) demandé.
 
-- **http://0.0.0.0:5000/projet_3/sum/field** pour obtenir la somme du champs "field" (age, market_value, transfer_fee) demandé.
+- **http://0.0.0.0:5000/sum/field** pour obtenir la somme du champs "field" (Age, Market_value, Transfer_fee) demandé.
 
-- **http://0.0.0.0:5000/projet_3/stats/field** pour obtenir les statistiques du champs "field" (age, market_value, transfer_fee) demandé.
+- **http://0.0.0.0:5000/transfers/stats** pour obtenir les statistiques du champs "field" (Age, Market_value, Transfer_fee) demandé.
+
+- **http://0.0.0.0:5000/players**
+- **http://0.0.0.0:5000/teams**
+- **http://0.0.0.0:5000/leagues**
