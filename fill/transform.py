@@ -11,7 +11,6 @@ for line in data:
     line = [value.replace('"', '') for value in line]
     line = [value.replace(',', '') for value in line]
     line = [value.replace(';', '') for value in line]
-    line = [value.replace('-', ' ') for value in line]
     line = [re.sub(r"^\d\.\s?", '', value) for value in line]
     line = [value.replace('\n', '').strip() for value in line]
     line = [value.replace('\'', '') for value in line]

@@ -18,7 +18,7 @@
             "analyzer":"my_projet_3_analyzer"},
          "Position": {"type":"text",
             "analyzer":"my_projet_3_analyzer"},
-         "Age": {"type":"byte"},
+         "Age": {"type":"integer"},
          "Team_from": {"type":"text",
             "analyzer":"my_projet_3_analyzer"},
          "League_from": {"type":"text",
@@ -29,7 +29,7 @@
             "analyzer":"my_projet_3_analyzer"},
          "Season": {"type":"text",
             "analyzer":"my_projet_3_analyzer"},
-         "Market_value": {"type":"float"},
+         "Market_value": {"type":"integer"},
          "Transfer_fee": {"type":"integer"},
          "csv":{"type":"text"}
       }
