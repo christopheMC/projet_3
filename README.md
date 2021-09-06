@@ -13,20 +13,20 @@ J'ai choisi d'utiliser **ElasticSearch** pour stocker le jeu de données.
 ## Lancement d'ElasticSearch
 Tapez dans un terminal la commande suivante:
 
-**docker run -d \
---name elasticsearch \
--p 9200:9200 \
--p 9300:9300 \
--e "discovery.type=single-node" \
-elasticsearch:7.10.1**
+**docker run -d \**
+**--name elasticsearch \**
+**-p 9200:9200 \**
+**-p 9300:9300 \**
+**-e "discovery.type=single-node" \**
+**elasticsearch:7.10.1**
 
 ## Lancement de Kibana (Optionnel)
 Tapez dans un terminal la commande suivante:
 
-**docker run -d \
-        --name kibana \
-        --link elasticsearch:elasticsearch \
-        -p 5601:5601 docker.elastic.co/kibana/kibana:7.10.2**
+**docker run -d \**
+        **--name kibana \**
+        **--link elasticsearch:elasticsearch \**
+        **-p 5601:5601 docker.elastic.co/kibana/kibana:7.10.2**
         
 Dans une fenêtre internet, vous aurez accès à l'interface Kibana à l'adresse URL suivante:
 
