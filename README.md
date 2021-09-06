@@ -42,9 +42,7 @@ On crée le pipeline avec le nom des colonnes issues du jeu de données.
  
 Puis on crée l'index "projet_3" avec la ligne de commande suivante:
 
-**curl -X PUT localhost:9200/projet_3 \
--H "Content-Type: application/json" \
---data-binary "@projet_3_analyzer.json"**
+**curl -X PUT localhost:9200/projet_3 -H "Content-Type: application/json" --data-binary "@projet_3_analyzer.json"**
 
 ### Nettoyage du jeu de données
 Pour nettoyer le jeu de données, il suffit de lancer un programme python qui va créer un nouveau fichier .csv où on aura supprimé les headers et supprimé les caractères de ponctuation tels que les virgules, les guillemets....
