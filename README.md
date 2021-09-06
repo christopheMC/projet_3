@@ -98,19 +98,19 @@ Nous avons les noms suivants:
 
 - **http://0.0.0.0:5000/Name/query** pour faire une recherche spécifique, on remplacera le champs "Age" (ex: http://0.0.0.0:5000/Name/Zidane).
 
-- **http://0.0.0.0:5000/Position/query** pour faire une recherche spécifiquepour le champs "Position" (ex: "http://0.0.0.0:5000/Position/Centre Back").
+- **http://0.0.0.0:5000/Position/query** pour faire une recherche spécifique pour le champs "Position" (ex: "http://0.0.0.0:5000/Position/Centre Back").
 
-- **http://0.0.0.0:5000/Age/query** pour faire une recherche spécifiquepour le champs "Age" (ex: http://0.0.0.0:5000/Age/25).
+- **http://0.0.0.0:5000/Age/query** pour faire une recherche spécifique pour le champs "Age" (ex: http://0.0.0.0:5000/Age/25).
 
-- **http://0.0.0.0:5000/Team_from/query** pour faire une recherche spécifiquepour le champs "Team_from" (ex: http://0.0.0.0:5000/Team_from/West Ham).
+- **http://0.0.0.0:5000/Team_from/query** pour faire une recherche spécifique pour le champs "Team_from" (ex: http://0.0.0.0:5000/Team_from/barcelona).
 
-- **http://0.0.0.0:5000/League_from/query** pour faire une recherche spécifiquepour le champs "League_from" (ex: http://0.0.0.0:5000/League_from/Premier League).
+- **http://0.0.0.0:5000/League_from/query** pour faire une recherche spécifique pour le champs "League_from" (ex: http://0.0.0.0:5000/League_from/Premier).
 
-- **http://0.0.0.0:5000/Team_to/query** pour faire une recherche spécifiquepour le champs "Team_to" (ex: http://0.0.0.0:5000/Team_to/Ternana).
+- **http://0.0.0.0:5000/Team_to/query** pour faire une recherche spécifique pour le champs "Team_to" (ex: http://0.0.0.0:5000/Team_to/Ternana).
 
-- **http://0.0.0.0:5000/League_to/query** pour faire une recherche spécifiquepour le champs "League_to" (ex: http://0.0.0.0:5000/League_to/Serie B).
+- **http://0.0.0.0:5000/League_to/query** pour faire une recherche spécifique pour le champs "League_to" (ex: http://0.0.0.0:5000/League_to/LaLiga).
 
-- **http://0.0.0.0:5000/Season/query** pour faire une recherche spécifiquepour le champs "Season" (ex: http://0.0.0.0:5000/Season/2000-2001).
+- **http://0.0.0.0:5000/Season/query** pour faire une recherche spécifique pour le champs "Season" (ex: http://0.0.0.0:5000/Season/2000-2001).
 
 - **http://0.0.0.0:5000/Transfer_fee/query** pour faire une recherche spécifique pour le champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/26000000).
 
