@@ -3,6 +3,9 @@
 ## Objectif
 L’objectif de ce projet est de choisir, mettre en place, et peupler une base de données à partir d’un jeu de données de l’open data, et d’implémenter une API vous permettant de requêter cette base de données.
 
+## Pré-requis
+**pip3 install -r requirements.txt**
+
 ## Data
 J'ai choisi de prendre le jeu de données suivant:
 - **https://www.kaggle.com/vardan95ghazaryan/top-250-football-transfers-from-2000-to-2018**
