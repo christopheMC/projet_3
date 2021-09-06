@@ -13,20 +13,12 @@ J'ai choisi d'utiliser **ElasticSearch** pour stocker le jeu de données.
 ## Lancement d'ElasticSearch
 Tapez dans un terminal la commande suivante:
 
-**docker run -d \**
-**--name elasticsearch \**
-**-p 9200:9200 \**
-**-p 9300:9300 \**
-**-e "discovery.type=single-node" \**
-**elasticsearch:7.10.1**
+**docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.10.1**
 
 ## Lancement de Kibana (Optionnel)
 Tapez dans un terminal la commande suivante:
 
-**docker run -d \**
-        **--name kibana \**
-        **--link elasticsearch:elasticsearch \**
-        **-p 5601:5601 docker.elastic.co/kibana/kibana:7.10.2**
+**docker run -d --name kibana --link elasticsearch:elasticsearch -p 5601:5601 docker.elastic.co/kibana/kibana:7.10.2**
         
 Dans une fenêtre internet, vous aurez accès à l'interface Kibana à l'adresse URL suivante:
 
@@ -80,7 +72,16 @@ L'URL, pour se connecter, est le suivant:
 
 **http://0.0.0.0:5000/**
 
+Pour vérifier que l'API est en ligne, vous pouvez aller à l'adresse suivante:
+
+**http://0.0.0.0:5000/status**
+
+et vous devez visualiser la réponse ci-dessous:
+
+**{'On Air': 1}**
+
 L'API possède plusieurs routes différentes que je vais détailler ci-dessous:
+
 - **http://0.0.0.0:5000/all_transfers** pour avoir une visualisation d'une dizaine de résultats.
 
 Pour les routes suivantes, il est important de connaitre le nom des différentes colonnes du jeu de données.
@@ -97,26 +98,52 @@ Nous avons les noms suivants:
 - **Market_value**: Prix estimatif du transfert
 - **Transfer_fee**: Prix réel du transfert
 
-- **http://0.0.0.0:5000/match/field/query** pour faire une recherche spécifique, on remplacera le champs "field" par un des noms de colonnes précédemment cité et le champs "query" par le nom ou la valeur que vous recherchez (ex: http://0.0.0.0:5000/match/Name/Zidane).
+- **http://0.0.0.0:5000/Name/query** pour faire une recherche spécifique, on remplacera le champs "Age" (ex: http://0.0.0.0:5000/Name/Zidane).
 
-- **http://0.0.0.0:5000/range/field/less/query** pour obtenir tous les résultats qui seront inférieurs à la valeur demandée, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee) et le champs "query" par la valeur souhaitée.
+- **http://0.0.0.0:5000/Position/query** pour faire une recherche spécifiquepour le champs "Position" (ex: "http://0.0.0.0:5000/Position/Centre Back").
 
-- **http://0.0.0.0:5000/range/field/more/query** pour obtenir tous les résultats qui seront supérieurs à la valeur demandée, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee) et le champs "query" par la valeur souhaitée.
+- **http://0.0.0.0:5000/Age/query** pour faire une recherche spécifiquepour le champs "Age" (ex: http://0.0.0.0:5000/Age/25).
 
-- **http://0.0.0.0:5000/range/field/in/query1/query2** pour obtenir tous les résultats qui seront comppris entre les valeur demandées, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee), le champs "query1" et le champs "query" par les valeurs souhaitées.
+- **http://0.0.0.0:5000/Team_from/query** pour faire une recherche spécifiquepour le champs "Team_from" (ex: http://0.0.0.0:5000/Team_from/West Ham).
 
-- **http://0.0.0.0:5000/range/field/out/query1/query2** pour obtenir tous les résultats qui seront comppris en dehors des valeur demandées, on remplacera le champs "field" par un des noms de colonnes numériques (Age, Season, Market_value, Transfer_fee), le champs "query1" et le champs "query" par les valeurs souhaitées.
+- **http://0.0.0.0:5000/League_from/query** pour faire une recherche spécifiquepour le champs "League_from" (ex: http://0.0.0.0:5000/League_from/Premier League).
 
-- **http://0.0.0.0:5000/avg/field** pour obtenir la moyenne du champs "field" (Age, Market_value, Transfer_fee) demandé.
+- **http://0.0.0.0:5000/Team_to/query** pour faire une recherche spécifiquepour le champs "Team_to" (ex: http://0.0.0.0:5000/Team_to/Ternana).
 
-- **http://0.0.0.0:5000/min/field** pour obtenir le minimum du champs "field" (Age, Market_value, Transfer_fee) demandé.
+- **http://0.0.0.0:5000/League_to/query** pour faire une recherche spécifiquepour le champs "League_to" (ex: http://0.0.0.0:5000/League_to/Serie B).
 
-- **http://0.0.0.0:5000/min/field** pour obtenir le maximum du champs "field" (Age, Market_value, Transfer_fee) demandé.
+- **http://0.0.0.0:5000/Season/query** pour faire une recherche spécifiquepour le champs "Season" (ex: http://0.0.0.0:5000/Season/2000-2001).
 
-- **http://0.0.0.0:5000/sum/field** pour obtenir la somme du champs "field" (Age, Market_value, Transfer_fee) demandé.
+- **http://0.0.0.0:5000/Transfer_fee/query** pour faire une recherche spécifique pour le champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/26000000).
 
-- **http://0.0.0.0:5000/transfers/stats** pour obtenir les statistiques du champs "field" (Age, Market_value, Transfer_fee) demandé.
+- **http://0.0.0.0:5000/Age/less/query** pour obtenir tous les résultats qui seront inférieurs à la valeur demandée pour le champs "Age" (ex: http://0.0.0.0:5000/Age/less/25).
 
-- **http://0.0.0.0:5000/players**
-- **http://0.0.0.0:5000/teams**
-- **http://0.0.0.0:5000/leagues**
+- **http://0.0.0.0:5000/Transfer_fee/less/query** pour obtenir tous les résultats qui seront inférieurs à la valeur demandée pour le champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/less/10000000).
+
+- **http://0.0.0.0:5000/Age/more/query** pour obtenir tous les résultats qui seront supérieurs à la valeur demandée pour le champs "Age" (ex: http://0.0.0.0:5000/Age/more/30).
+
+- **http://0.0.0.0:5000/Transfer_fee/more/query** pour obtenir tous les résultats qui seront supérieurs à la valeur demandée pour le champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/more/25000000).
+
+- **http://0.0.0.0:5000/Age/query1/query2** pour obtenir tous les résultats qui seront comppris entre les valeurs demandées pour le champs "Age" (ex: http://0.0.0.0:5000/Age/20/23).
+
+- **http://0.0.0.0:5000/Transfer_fee/query1/query2** pour obtenir tous les résultats qui seront compris entre les valeurs demandées pour le champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/23000000/25000000).
+
+- **http://0.0.0.0:5000/Age/avg** pour obtenir la moyenne du champs "Age" (ex: http://0.0.0.0:5000/Age/avg).
+
+- **http://0.0.0.0:5000/Transfer_fee/avg** pour obtenir la moyenne du champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/avg).
+
+- **http://0.0.0.0:5000/Age/min** pour obtenir le minimum du champs "Age" (ex: http://0.0.0.0:5000/Age/min).
+
+- **http://0.0.0.0:5000/Transfer_fee/min** pour obtenir le minimum du champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/min).
+
+- **http://0.0.0.0:5000/Age/max** pour obtenir le maximum du champs "Age" (ex: http://0.0.0.0:5000/Age/max).
+
+- **http://0.0.0.0:5000/Transfer_fee/max** pour obtenir le maximum du champs "Transfer_fee" (ex: http://0.0.0.0:5000/Transfer_fee/max).
+
+- **http://0.0.0.0:5000/Transfers/stats** pour obtenir les statistiques des champs "Age" et "Transfer_fee" (ex: http://0.0.0.0:5000/Transfers/stats).
+
+- **http://0.0.0.0:5000/Players** pour obtenir les noms des joueurs contenus dans la base de données (ex: http://0.0.0.0:5000/Players).
+
+- **http://0.0.0.0:5000/Teams** pour obtenir les noms des différentes équipes (ex: http://0.0.0.0:5000/Teams).
+
+- **http://0.0.0.0:5000/Leagues** pour obtenir les noms des différentes ligues (ex: http://0.0.0.0:5000/Leagues).
