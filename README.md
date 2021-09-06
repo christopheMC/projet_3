@@ -96,7 +96,7 @@ Nous avons les noms suivants:
 - **Market_value**: Prix estimatif du transfert
 - **Transfer_fee**: Prix réel du transfert
 
-- **http://0.0.0.0:5000/Name/query** pour faire une recherche spécifique, on remplacera le champs "Age" (ex: http://0.0.0.0:5000/Name/Zidane).
+- **http://0.0.0.0:5000/Name/query** pour faire une recherche spécifique pour le champs "Name" (ex: http://0.0.0.0:5000/Name/Zidane).
 
 - **http://0.0.0.0:5000/Position/query** pour faire une recherche spécifique pour le champs "Position" (ex: "http://0.0.0.0:5000/Position/Centre").
 
