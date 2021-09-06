@@ -98,7 +98,7 @@ Nous avons les noms suivants:
 
 - **http://0.0.0.0:5000/Name/query** pour faire une recherche spécifique, on remplacera le champs "Age" (ex: http://0.0.0.0:5000/Name/Zidane).
 
-- **http://0.0.0.0:5000/Position/query** pour faire une recherche spécifique pour le champs "Position" (ex: "http://0.0.0.0:5000/Position/Centre Back").
+- **http://0.0.0.0:5000/Position/query** pour faire une recherche spécifique pour le champs "Position" (ex: "http://0.0.0.0:5000/Position/Centre").
 
 - **http://0.0.0.0:5000/Age/query** pour faire une recherche spécifique pour le champs "Age" (ex: http://0.0.0.0:5000/Age/25).
 
