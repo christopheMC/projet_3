@@ -1,0 +1,48 @@
+﻿version: '3.9'
+services:
+    api:
+        image: christophemc/api:latest
+        container_name: api
+        restart: always
+        ports:
+            - "5000:5000"
+        networks:
+            - my_network
+        depends_on:
+            - elasticsearch
+            - fill
+    fill:
+        image: christophemc/fill:latest
+        container_name: fill
+        restart: always
+        networks:
+            - my_network
+        depends_on:
+            - elasticsearch
+        volumes:
+            - my_volume:/home
+    kibana:
+        image: docker.elastic.co/kibana/kibana:7.10.2
+        container_name: kibana
+        ports:
+            - "5601:5601"
+        networks:
+            - my_network
+        links:
+            - elasticsearch
+        depends_on:
+            - elasticsearch
+    elasticsearch:
+        image: elasticsearch:7.10.1
+        container_name: elasticsearch
+        environment:
+            discovery.type: single-node
+        networks:
+            - my_network
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+networks:
+    my_network:
+volumes:
+    my_volume:

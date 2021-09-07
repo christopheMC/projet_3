@@ -1,0 +1,37 @@
+{
+   "settings":{
+      "index.default_pipeline":"projet_3_pipeline",
+      "analysis":{
+         "analyzer":{
+            "my_projet_3_analyzer":{
+               "type":"custom",
+               "char_filter":[],
+               "tokenizer":"standard",
+               "filter":["lowercase"]
+            }
+         }
+      }
+   },
+   "mappings":{
+      "properties":{
+         "Name": {"type":"text",
+            "analyzer":"my_projet_3_analyzer"},
+         "Position": {"type":"text",
+            "analyzer":"my_projet_3_analyzer"},
+         "Age": {"type":"integer"},
+         "Team_from": {"type":"text",
+            "analyzer":"my_projet_3_analyzer"},
+         "League_from": {"type":"text",
+            "analyzer":"my_projet_3_analyzer"},
+         "Team_to": {"type":"text",
+            "analyzer":"my_projet_3_analyzer"},
+         "League_to": {"type":"text",
+            "analyzer":"my_projet_3_analyzer"},
+         "Season": {"type":"text",
+            "analyzer":"my_projet_3_analyzer"},
+         "Market_value": {"type":"integer"},
+         "Transfer_fee": {"type":"integer"},
+         "csv":{"type":"text"}
+      }
+   }
+}
