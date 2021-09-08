@@ -148,3 +148,16 @@ Nous avons les noms suivants:
 - **http://0.0.0.0:5000/Teams** pour obtenir les noms des différentes équipes (ex: http://0.0.0.0:5000/Teams).
 
 - **http://0.0.0.0:5000/Leagues** pour obtenir les noms des différentes ligues (ex: http://0.0.0.0:5000/Leagues).
+
+## Utilisation du docker-compose
+La dernière solution qui sera également la plus simple, c'est le tout en un avec la commande suivante:
+
+**docker-compose up -d**
+
+- Lancement d'ElasticSearch
+- Lancement de Kibana à l'adresse donnée précédemment
+- Transformation du fichier csv
+- Création du pipeline
+- Création de l'index
+- Peuplement de la base de données
+- Lancement de l'API à l'adresse donnée précédemment
